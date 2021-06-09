@@ -1,0 +1,219 @@
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #2193b0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+}
+
+/* i styled navbar from hre*/
+
+.navbar-brand{
+    font-size: 25px;
+    color:blue;
+    font-weight: bold;
+}
+.nav-link:hover{
+    background-color: white;
+    border-radius: 15px;
+
+}
+
+#container{
+    position:absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #151729;
+    box-shadow: 0 15px 30px rgba(0,0,0,.5), #151729;
+    border-radius: 10px;
+   
+
+}
+#container .content{
+    
+    max-width: 600px;
+    text-align: center;
+    
+}
+
+#container .content h2{
+    
+    font-size: 10vw;
+    color: white;
+    line-height: 1em;
+    font-weight: bold;
+}
+h4{
+    color: black;
+    
+    
+}
+#container .content .h4{
+    position: relative;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    background: #fff;
+    font-weight: 300;
+    padding: 10px 20px ;
+    display: inline-block; 
+    color: black;
+}
+#container .content p{
+    color: #fff;
+    font-size: 1.2em;
+}
+#container .content button{
+     position: relative;
+     display: inline-block;
+     padding:10px 25px;
+     background: #ff0562;
+     color: #fff;
+     text-decoration: none;
+     margin-top: 25px;
+     border-radius: 25px;
+     border-bottom: 4px solid #d00d56;
+}
+    
+
+
+/* I started about page from here*/
+
+
+
+
+
+.about{
+    padding-top: 85vh;
+    padding-bottom: 25px;
+}
+.box{
+    width: 450px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    color: white;
+    font-family: 'Century Gothic',sans-serif;
+    
+  }
+  .box-img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+  }
+  .box h1{
+    font-size: 40px;
+    letter-spacing: 4px;
+    font-weight: 100;
+  }
+  .box h5{
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 100;
+  }
+  .box p{
+    text-align: justify;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+  .box li{
+    display: inline-block;
+    margin: 6px;
+    list-style: none;
+  }
+  .box li a{
+    color: white;
+    text-decoration: none;
+    font-size: 60px;
+    transition: all ease-in-out 250ms;
+  }
+  .box li a:hover{
+    color: #b9b9b9;
+  }
+  
+
+/* here i started animation for the end of the web page*/
+
+
+.last-anime{
+    position: relative;
+    margin-top: 10vh;
+}
+.last-anime .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url('images/wave.png');
+    background-size: 1000px 100px;
+}
+.last-anime .wave.wave1{
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+.last-anime .wave.wave2{
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.7;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+.last-anime .wave.wave3{
+    animation: animate 15s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+.last-anime .wave.wave4{
+    animation: animate2 5s linear infinite;
+    z-index: 998;
+    opacity: 1;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+@keyframes animate{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: 1000px;
+    }
+}
+@keyframes animate2{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: -1000px;
+    }
+}
+
+.models{
+    position: relative;
+    padding-top: 100vh;
+    color: white;
+}
