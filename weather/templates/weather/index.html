@@ -35,16 +35,17 @@
 
     <div id="container"  style= "background-image: url({%static '/img/p404.png' %})">
        <div class="content">
-            <h2 id="temp">{{temperature}}°C</h2>
-            <h4 class="h4">{{description}}</h4>
+            <h2 id="temp">{{weather.temperature}}°C</h2>
+            <h4 class="h4">{{weather.description}}</h4>
             <p id='weather'><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
               <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-            </svg>{{city}}</p>
+            </svg>{{weather.city}}</p>
             <form  action="{%url 'mainPage'%}" method="POST">
                 {%csrf_token%}
                 <input class="form-control me-2" name="city_name" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit" id="Button">Search</button>
+                
             </form>
        </div>   
     </div> 
@@ -54,7 +55,19 @@
     
 
 <script>
-  document.getElementById("Button").disabled = false;
+  function myButton(){
+    location.reload();
+  }
+
+  console.log('working')
+  var container=document.getElementById('container');
+    window.onmousemove=function(e){
+        var x=e.clientX,
+            y=e.clientY;
+        container.style.backgroundPositionX=x+'px';
+        container.style.backgroundPositionY=y+'px';
+
+    }
 </script>      
 </body>
 </html>
