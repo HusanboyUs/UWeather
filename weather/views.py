@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 import requests
+from requests.sessions import Request
 from .models import City
 from django.http import HttpResponse
 from .models import City
@@ -9,7 +10,7 @@ def errorPage(request):
     return render(request, 'weather/error_page.html')   
 
 def homePage(request):
-    cities=City.objects.all()
+    ities=City.objects.all()
     if request.method=='POST':
         city_name=request.POST['city_name']
         url="http://api.openweathermap.org/data/2.5/weather?q={}&appid=2eaa371d6a51269823ba337bcc52873b&units=metric&lang=en"
@@ -21,19 +22,20 @@ def homePage(request):
                 'description': r['weather'][0]['description'],
                 'icon': r['weather'][0]['icon'],
                                         
-            }
-                
-                
+            }            
     else:
         weather={}  
-
-    context={'weather':weather, }                
+    context={'weather':weather}                
     return render(request, 'weather/index.html',context)
     
 
-def modelPage(reuqest):
+def modelPage(request):
+    #form=CityForm()
+    #if request.method=='POST':
+        #form=CityForm(request.POST)
+        #if form.is_valid():
+            #form.save()
     pass
-
 def aboutPage(request):
      return render(request, 'weather/about.html')
    
