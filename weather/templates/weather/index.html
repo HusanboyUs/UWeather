@@ -21,13 +21,13 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'mainPage'%}">uweather</a>
+          <a class="navbar-brand" href="">uweather</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link" href="{% url 'aboutPage'%}">About</a>
+              <a class="nav-link" href="{% url 'dashboardPage'%}">Personal</a>
             </div>
           </div>
         </div>
@@ -41,16 +41,66 @@
               <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
             </svg>{{weather.city}}</p>
-            <form  action="{%url 'mainPage'%}" method="POST">
+            <form   method="POST">
                 {%csrf_token%}
-                <input class="form-control me-2" name="city_name" type="search" placeholder="Search" aria-label="Search">
+                <input  class="form-control me-2" name="city"  placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit" id="Button">Search</button>
             </form>
        </div>   
     </div> 
-    {%include 'weather/model.html'%}  
-    {%block model%}
-    {%endblock%} 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center" >
+      {%for city in cities%}
+      <div class="col"  >
+        <div class="card mb-4 rounded-3 shadow-sm" style="margin-left:30px; margin-right:30px;">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{city.name}}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{weather.temperature}}</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li></li>
+              <li>Clear Sky</li>
+              <li>Sunrise</li>
+              <li>Sunset</li>
+            </ul>
+            <form action="dashboardPage/" method="POST">
+              {%csrf_token%}
+              <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Add/Edit City</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
     
 
 <script>

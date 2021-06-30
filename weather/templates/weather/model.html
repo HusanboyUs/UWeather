@@ -42,7 +42,10 @@
               <li>Sunrise</li>
               <li>Sunset</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Edit/Change</button>
+            <form action="dashboardPage/" method="POST">
+              {%csrf_token%}
+              <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Add City</button>
+            </form>
           </div>
         </div>
       </div>
@@ -59,7 +62,10 @@
               <li>Priority email support</li>
               <li>Help center access</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Edit/Change</button>
+            <form action="dashboardPage/" method="POST">
+              {%csrf_token%}
+              <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Add City</button>
+            </form>
           </div>
         </div>
       </div>
@@ -76,7 +82,10 @@
               <li>Priority email support</li>
               <li>Help center access</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Edit/Change</button>
+            <form action="dashboardPage/" method="POST">
+              {%csrf_token%}
+              <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Add City</button>
+            </form>
           </div>
         </div>
       </div>
